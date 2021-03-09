@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Alea - Music App</title>
+    <link rel="stylesheet" href="musicapp/css/animate.css">
+    <link rel="stylesheet" href="musicapp/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="musicapp/css/custom.css">
+    <link href="https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600,800" rel="stylesheet">
+    <script src="musicapp/js/jquery.min.js"></script>
+    <link rel="icon" href="musicapp/images/favicon-biobutterfly.png" sizes="32x32">
+    <link rel="icon" href="musicapp/favicon-biobutterfly.png" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="musicapp/images/favicon-biobutterfly.png">
+    <meta name="msapplication-TileImage" content="musicapp/images/favicon-biobutterfly.png">
+
+    <style>
+     .album-cover img{display:none!important;}
+     .avatar-author{display:none!important;}
+     .player-audio-min.mini .audiojs .scrubber{left:0!important;width:100%!important;}
+     .title-author{top:30px!important;}
+    </style>
+
+</head>
+
+<body class="app" theme-color="rose" device-style="ios" device-size="iphoneX">
+
+    <div class="container">
+        <div class="wrapper">
+            <!-- Panels overlay-->
+            <div class="panel-overlay"></div>
+
+            <!-- Left panel with reveal effect-->
+            <aside class="sidebar panel panel-left panel-cover shadow" essential-sidebar="hide">
+                <div class="panel-wrap">
+                    <div class="content-block">
+                        <div class="sidebar">
+                            <div class="main-grids safe-area">
+                                <div class="inner">
+                                    <button class="settings">Settings</button>
+                                    <div class="user-avatar">
+                                        <img alt="UserAvatar" src="musicapp/images/1sz2.jpg" class="avatar photo" width="100%" height="auto">
+                                        <b class="fn"><a data-sound="tap" class="m-sound-audio item-link close-panel" href="profile.html">Melissa</a></b>
+                                    </div>
+                                    <div class="categories view-right">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- end Sidebar Panel-left -->
+
+            <!-- Your main view, should have "view-main" class -->
+            <div class="view view-main">
+
+                <div class="pages">
+                    <div id="browse-1" data-page="browse-1" class="page browse browse-1 nope">
+
+                        <section class="searches essential-search" blur="blur" searchbar-style="style1">
+                            <div class="overlay"></div>
+                            <div class="inner appearFromTop">
+                                <div class="blur"></div>
+                                <div class="main-grids safe-area">
+                                    <div class="search-form-container">
+                                        <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+                                            <div class="input-container">
+                                                <input type="search" placeholder="Search…">
+                                                <div class="search-icon">
+                                                    <svg width="21" height="21" viewBox="0 0 20 20">
+                                                        <g>
+                                                            <path fill="#120810" stroke="#120810" d="M14.117 12.96a7.364 7.364 0 1 0-1.157 1.157l4.643 4.643a.816.816 0 0 0 1.157 0 .818.818 0 0 0 0-1.157l-4.643-4.643zm-5.753 1.13a5.727 5.727 0 1 1 0-11.454 5.727 5.727 0 0 1 0 11.455z" />
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <div class="divider"></div>
+                                            </div>
+                                            <a href="#" class="searchbar-clear">
+                                                <svg width="28" height="28" viewBox="0 0 28 28">
+                                                    <g>
+                                                        <rect width="28" height="28" fill="#B4B4B4" rx="14" />
+                                                        <path fill="#FFF" d="M15.414 14l3.536-3.536a1 1 0 0 0-1.414-1.414L14 12.586 10.464 9.05a1 1 0 0 0-1.414 1.414L12.586 14 9.05 17.536a1 1 0 0 0 1.414 1.414L14 15.414l3.536 3.536a1 1 0 0 0 1.414-1.414L15.414 14z" />
+                                                    </g>
+                                                </svg>
+                                                <svg class="svg-style2" width="15px" height="15px" viewBox="0 0 16 17">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <g transform="translate(-7.000000, -6.000000)">
+                                                            <rect id="frame" x="0" y="0" width="28" height="28"></rect>
+                                                            <path d="M16.9953742,14.5024854 L22.3097444,9.18811519 C22.8600654,8.63779413 22.8600654,7.74554742 22.3097444,7.19522637 C21.7594233,6.64490532 20.8671766,6.64490532 20.3168556,7.19522637 L20.3168556,7.19522637 L15.0024854,12.5095966 L9.68811519,7.19522637 L9.68811519,7.19522637 C9.13779413,6.64490532 8.24554742,6.64490532 7.69522637,7.19522637 C7.14490532,7.74554742 7.14490532,8.63779413 7.69522637,9.18811519 L13.0095966,14.5024854 L7.69522637,19.8168556 C7.14490532,20.3671766 7.14490532,21.2594233 7.69522637,21.8097444 L7.69522637,21.8097444 C8.24554742,22.3600654 9.13779413,22.3600654 9.68811519,21.8097444 L9.68811519,21.8097444 L15.0024854,16.4953742 L20.3168556,21.8097444 L20.3168556,21.8097444 C20.8671766,22.3600654 21.7594233,22.3600654 22.3097444,21.8097444 L22.3097444,21.8097444 C22.8600654,21.2594233 22.8600654,20.3671766 22.3097444,19.8168556 L16.9953742,14.5024854 Z" id="shapes" fill="#FFFFFF"></path>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                            <a class="searchbar-cancel">Close</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="essential-search searchbar-result">
+                            <div class="content-block searchbar-not-found">
+                                <div class="content-block-inner">Nothing found</div>
+                            </div>
+                            <div class="list-block list-block-search searchbar-found">
+                                <ul>
+                                    <li>
+                                        <div class="item-title"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Scrollable page content -->
+                        <div class="scrollable-content">
+
+                            <div class="dominant-color dominant-color-1"></div>
+
+                            <section class="section-titles" section-type="standard" see-all-style="style1" section-icon-style="play" section-title-style="left">
+                                <header>
+                                    <div class="main-grids safe-area">
+                                        <div class="inner">
+                                           
+                                            <h2>Chapter 1</h2><br/>
+
+                                        </div>
+                                    </div>
+                                </header>
+                            </section>
+                            <section class="list-songs playlist-song checkPlaylist" avatar="show" author="show" song-time="show" song-price="hide" like-number="hide" add-to="hide" delete-track="hide" ranking="hide" like-heart-style="style1" like-number-style="style1">
+                                <div class="main-grids safe-area">
+                                    <div class="inner">
+                                        <div class="the-song first slide slide-1" avatar="46sz2" >
+                                            <a href="#" data-src="music/song5.mp3"></a>
+
+                                            <div class="author-like-wrapper">
+                                                <p class="rank">1</p>
+                                                <div class="author-avatar"><img alt="Author" src="musicapp/images/46sz2.jpg" width="100%" height="auto"></div>
+                                                <div class="author-like">
+                                                    <div class="song-title-author">
+                                                        <h2 class="title">Blink of Youth</h2><cite class="author" avatar="46sz2" ><a href="artist-profile.html" checkClick="checkClick">Ringo Shiina</a></cite></div>
+                                                    <div class="song-info-options-container">
+                                                     <span checkClick="checkClick" class="song-time">3.20</span></div>
+                                                </div>
+                                                <div class="divider"></div>
+                                            </div>
+                                        </div>
+                                        <div class="the-song slide slide-2" avatar="104sz2" >
+                                            <a href="#" data-src="music/song2.mp3"></a>
+                                        
+                                            <div class="author-like-wrapper">
+                                                <p class="rank">2</p>
+                                                <div class="author-avatar"><img alt="Author" src="musicapp/images/104sz2.jpg" width="100%" height="auto"></div>
+                                                <div class="author-like">
+                                                    <div class="song-title-author">
+                                                        <h2 class="title">Summer Blue</h2><cite class="author" avatar="104sz2" ><a href="artist-profile.html" checkClick="checkClick">Frederic</a></cite></div>
+                                                    <div class="song-info-options-container">
+                                                       <span checkClick="checkClick" class="song-time">2.44</span></div>
+                                                </div>
+                                                <div class="divider"></div>
+                                            </div>
+                                        </div>
+                                        <div class="the-song slide slide-3" avatar="23sz2">
+                                            <a href="#" data-src="music/song3.mp3"></a>
+                                          
+                                            <div class="author-like-wrapper">
+                                                <p class="rank">3</p>
+                                                <div class="author-avatar"><img alt="Author" src="musicapp/images/23sz2.jpg" width="100%" height="auto"></div>
+                                                <div class="author-like">
+                                                    <div class="song-title-author">
+                                                        <h2 class="title">We Are the People</h2><cite class="author" avatar="23sz2" ><a href="artist-profile.html" checkClick="checkClick">Nick Mulvey</a></cite></div>
+                                                    <div class="song-info-options-container">
+                                                       <span checkClick="checkClick" class="song-time">4.18</span></div>
+                                                </div>
+                                                <div class="divider"></div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </section>
+
+                            </section>
+                            <!-- end bottom padding -->
+                        </div>
+                        <!-- end scrollable content -->
+                    </div>
+                    <!-- end data-index -->
+                </div>
+                <!-- end pages -->
+
+               
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- end videojs song -->
+
+
+
+    </section>
+    <!-- end player-video-min -->
+
+
+
+
+    <section class="player-audio-min player-attribute general " music-player-style="style1">
+        <div class="album-cover-blur"><img src="musicapp/images/2sz6.jpg" class="album cover" alt="cover" width="100%" height="100%"></div>
+        <div class="audiojs song swipeout-content" classname="audiojs" id="audiojs_wrapper0">
+            <audio>
+                <source src="music/song1.mp3" width="100%" height="auto" alt="song" title="song" type="audio/mpeg">
+            </audio>
+            <div class="audio-player-bg">
+
+                <div class="playlist-header big-player">
+                    <section class="headers" header-type="music-player" header-style="style1" header-title-style="left">
+                        <header>
+                            <div class="main-grids safe-area">
+                                <div class="inner">
+                                    <button class="minimize"></button>
+                                    <svg class="now-icon" width="13" height="13" viewBox="0 0 13 13">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <path d="M-7-7h28v28H-7z" />
+                                            <path fill="#FFF" d="M0 5.506a1.5 1.5 0 1 1 3 0v5.988a1.5 1.5 0 1 1-3 0V5.506zm5-4.015C5 .668 5.666 0 6.5 0 7.328 0 8 .663 8 1.491V11.51C8 12.332 7.334 13 6.5 13c-.828 0-1.5-.663-1.5-1.491V1.49zM10 8.5C10 7.67 10.666 7 11.5 7c.828 0 1.5.665 1.5 1.499V11.5C13 12.33 12.334 13 11.5 13c-.828 0-1.5-.665-1.5-1.499V8.5z" />
+                                        </g>
+                                    </svg>
+                              
+                                    <h2>Now Playing</h2>
+                                   
+
+                                </div>
+                            </div>
+                        </header>
+                    </section>
+                </div>
+
+                <section class="section-tabs" section-type="tabs" tabs-style="style2">
+                    <div class="main-grids safe-area">
+                        <div class="buttons-row">
+                           
+                            <a href="#tab98" class="button tab-link active listen">Listen</a>
+                           
+                        </div>
+                    </div>
+                </section>
+
+                <div class="tabs-animated-wrapp">
+                    <div class="tabs">
+                
+                        <div id="tab98" class="tab active">
+                            <div class="big-player-queue-container">
+                                <div class="container-album-cover big-player">
+                                    <div class="main-grids grid-cover">
+                                        <div class="album-cover"><img src="musicapp/images/2sz6.jpg" class="album cover" alt="cover" width="100%" height="100%">
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="menu-options options-icon">
+                                    <svg width="5px" height="21px" viewBox="0 0 4 18">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-12.000000, -5.000000)">
+                                                <rect id="frame" x="0" y="0" width="28" height="28"></rect>
+                                                <path d="M14,9 C12.8954305,9 12,8.1045695 12,7 C12,5.8954305 12.8954305,5 14,5 C15.1045695,5 16,5.8954305 16,7 C16,8.1045695 15.1045695,9 14,9 Z M14,16 C12.8954305,16 12,15.1045695 12,14 C12,12.8954305 12.8954305,12 14,12 C15.1045695,12 16,12.8954305 16,14 C16,15.1045695 15.1045695,16 14,16 Z M14,23 C12.8954305,23 12,22.1045695 12,21 C12,19.8954305 12.8954305,19 14,19 C15.1045695,19 16,19.8954305 16,21 C16,22.1045695 15.1045695,23 14,23 Z" fill="#FFF"></path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+
+                                <div class="scrubber-command scrubber-options">
+                                    <div class="scrubber">
+                                        <div class="progress"></div>
+                                        <div class="loaded"></div>
+                                    </div>
+                                  
+                                    <div class="audio-player-content ">
+
+                                        <div class="mini-player">
+                                            <div class="main-grids safe-area">
+                                                <div class="player-song-info">
+                                                    <div class="avatar-author">
+                                                        <img class="avatar photo" src="musicapp/images/2sz5.jpg" alt="avatar" width="100%" height="auto">
+                                                    </div>
+                                                    <div class="title-author">
+                                                        <h2 class="title">Lucky Hi Five</h2>
+                                                        <cite class="author" avatar="11sz2" >Lisa</cite>
+                                                    </div>
+                                                </div>
+                                                <div class="player-song-control">
+                                                    <div class="player-command">
+                                                        <button class="mini-prev prev"></button>
+                                                        <div class="play-pause">
+                                                            <p class="play"></p>
+                                                            <p class="pause"></p>
+                                                            <p class="loading"></p>
+                                                            <p class="error"></p>
+                                                        </div>
+                                                        <button class="mini-next next"></button>
+                                                    </div>
+                                                </div>
+                                                <div class="error-message"></div>
+                                            </div>
+                                        </div>
+                                        <!-- end mini player -->
+
+                                        <div class="big-player big-player-content">
+                                            <div class="main-grids safe-area">
+                                                <div class="inner">
+                                                    <div class="time"><em class="played"></em><strong class="duration"></strong></div>
+                                                    <div class="title-author">
+                                                        <h2 class="title">Lucky Hi Five</h2>
+                                                        <cite class="author" avatar="11sz2" >Lisa</cite>
+                                                    </div>
+                                                    <div class="volume-content">
+                                                        <svg width="24px" height="21px" viewBox="0 0 24 21">
+                                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                <g transform="translate(-11.000000, -12.000000)">
+                                                                    <rect x="0" y="0" width="45" height="45"></rect>
+                                                                    <g transform="translate(11.000000, 12.000000)" stroke="#FFFFFF">
+                                                                        <path d="M11.8514739,19.0036271 L11.8514739,2.55674582 L8.88066607,5.01178842 C8.27709465,5.51057314 7.28462557,6.00344821 6.52888861,6.17983976 L4.23119153,6.71612996 C2.76407274,7.05856041 1.5,8.65369069 1.5,10.1599786 L1.5,11.9580286 C1.5,13.4361496 2.74494269,14.9232684 4.19695595,15.1838497 L6.43799773,15.5860316 C7.21920941,15.7262295 8.23464497,16.1800177 8.86072234,16.6687879 L11.8514739,19.0036271 Z" stroke-width="3"></path>
+                                                                        <path d="M16.6719577,14.7242933 C17.4910091,13.6460074 17.9814116,12.27416 17.9814116,10.7806142 C17.9814116,9.29690432 17.497447,7.93329515 16.6880966,6.85827664" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                        <path d="M19.957672,18.0468055 C21.4648071,16.0626535 22.3671958,13.5383196 22.3671958,10.7900487 C22.3671958,8.05987677 21.4766535,5.55070198 19.9873692,3.57256236" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                        <div class="volume no-fastclick"><span class="volumeBar no-fastclick"></span></div>
+                                                    </div>
+                                                    <div class="player-command">
+                                                        <div class="list">
+                                                            <div class="icon"></div>
+                                                            <button class="share-icon"></button>
+                                                        </div>
+                                                        <div class="command">
+                                                            <p class="prev"></p>
+                                                            <p class="playPause play"></p>
+                                                            <p class="next"></p>
+                                                        </div>
+                                                        <div class="heart-audio">
+                                                            <div class="heart">
+                                                                <div class="icon">
+                                                                    <svg class="audio-icon" width="24px" height="21px" viewBox="0 0 24 21">
+                                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                            <g transform="translate(-11.000000, -12.000000)">
+                                                                                <rect x="0" y="0" width="45" height="45"></rect>
+                                                                                <g transform="translate(11.000000, 12.000000)" stroke="#FFFFFF">
+                                                                                    <path d="M11.8514739,19.0036271 L11.8514739,2.55674582 L8.88066607,5.01178842 C8.27709465,5.51057314 7.28462557,6.00344821 6.52888861,6.17983976 L4.23119153,6.71612996 C2.76407274,7.05856041 1.5,8.65369069 1.5,10.1599786 L1.5,11.9580286 C1.5,13.4361496 2.74494269,14.9232684 4.19695595,15.1838497 L6.43799773,15.5860316 C7.21920941,15.7262295 8.23464497,16.1800177 8.86072234,16.6687879 L11.8514739,19.0036271 Z" stroke-width="3"></path>
+                                                                                    <path d="M16.6719577,14.7242933 C17.4910091,13.6460074 17.9814116,12.27416 17.9814116,10.7806142 C17.9814116,9.29690432 17.497447,7.93329515 16.6880966,6.85827664" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                                    <path d="M19.957672,18.0468055 C21.4648071,16.0626535 22.3671958,13.5383196 22.3671958,10.7900487 C22.3671958,8.05987677 21.4766535,5.55070198 19.9873692,3.57256236" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                                </g>
+                                                                            </g>
+                                                                        </g>
+                                                                    </svg>
+                                                                    <svg class="heart-icon" checkclick="checkClick" width="21px" height="18px" viewBox="0 0 17 15">
+                                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                            <g transform="translate(-7.000000, -9.000000)" fill="#FFF">
+                                                                                <path checkclick="checkClick" d="M15.4200001,12.3674936 C16.2709429,10.2381896 17.615006,9 19.1037501,9 C21.7197286,9 23.8400002,11.3731073 23.8400002,14.3006408 C23.8400002,20.3635207 15.4200001,23.8417942 15.4200001,23.8417942 C15.4200001,23.8417942 7,20.3635207 7,14.3006408 C7,11.3731073 9.12027159,9 11.73625,9 C13.2249941,9 14.5685344,10.1493509 15.4200001,12.3674936 Z"></path>
+                                                                            </g>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                    </div>
+                                                    <!--<div class="error-message"></div>-->
+                                                </div>
+                                            </div>
+
+                                            <div class="up-next-option">
+                                           
+                                       
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- active -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- end audio-player-bg -->
+        </div>
+        <!-- end audiojs song -->
+
+   
+    </section>
+    <!-- end player-audio-min -->
+
+   
+  
+    </div>
+    <!-- view.view-main -->
+    </div>
+    <!-- wrapper -->
+    </div>
+    <!-- container -->
+
+    <!-- Library JS -->
+
+    <script type="text/javascript" src="musicapp/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="musicapp/js/framework7.min.js"></script>
+</body>
+
+</html>
